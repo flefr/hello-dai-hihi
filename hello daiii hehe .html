@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello daii hehe</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: #ff6b6b;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .heart {
+            font-size: 2em;
+            color: #ff6b6b;
+        }
+        .button-container {
+            margin-top: 20px;
+            position: relative;
+            height: 100px;
+        }
+        button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #ff4c4c;
+        }
+        .cute-image {
+            width: auto;
+            height: 100px;
+            margin-top: 20px;
+            max-width: 100%;
+        }
+    </style>
+    <script>
+        function moveButton() {
+            const noButton = document.getElementById('noButton');
+            const container = noButton.parentElement;
+            const containerRect = container.getBoundingClientRect();
+            const maxX = containerRect.width - noButton.offsetWidth;
+            const maxY = containerRect.height - noButton.offsetHeight;
+            const newX = Math.floor(Math.random() * maxX);
+            const newY = Math.floor(Math.random() * maxY);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${newX}px`;
+            noButton.style.top = `${newY}px`;
+        }
+
+        function redirectToYes() {
+            const container = document.querySelector('.container');
+            container.innerHTML = `
+                <h1>Yay!</h1>
+                <p>
+                    yeeeyyyyyy bati na tayooo uwu. usap na tayo <3<3<3 click the button below to talk to a poging lalake name fleyans
+                </p>
+                <div class="heart">&#10084;</div>
+                <div class="button-container">
+                    <button onclick="window.location.href='https://www.facebook.com/lance.ferrer.796'">poging lalake</button>
+                </div>
+                <img src="https://media1.tenor.com/m/5BYK-WS0__gAAAAC/cool-fun.gif" alt="Cute GIF" class="cute-image">
+            `;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>sorry na dai... bati na tayo pleeassee</h1>
+        <p>
+            didnt mean it like that. I will never look at you that way. I just did it to brighten up the mood... I never meant to offend you
+          
+          forgive me na pleeassee
+        </p>
+        <div class="heart">&#10084;</div>
+        <div class="button-container">
+            <button onclick="redirectToYes()">okii sige <3 </button>
+            <button id="noButton" onclick="moveButton()">ayaw hmph. >:(</button>
+        </div>
+        <img src="https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy80MTY4MjA3L29yaWdpbi5qcGciLCJleHBpcmVzX2F0IjoxNzY2NjM3OTg5fQ.BPIOr8RvjYrDT-vTegchyFLMdv6H0LRc5D_fppKLASE/img.jpg?width=1200&height=600&coordinates=0%2C25%2C0%2C25" alt="Cute Image" class="cute-image">
+    </div>
+</body>
+</html>
